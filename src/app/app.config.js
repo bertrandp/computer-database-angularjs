@@ -1,6 +1,9 @@
-'use strict';
+/*jslint node: true */
 
 (function () {
+
+    'use strict';
+
     angular.module('app')
         .config(configureRoutes)
         .config(toastrConfig)

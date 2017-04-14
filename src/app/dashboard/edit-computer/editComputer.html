@@ -1,0 +1,46 @@
+<header class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="dashboard"> Application - Computer Database </a>
+    </div>
+</header>
+<section id="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2 box">
+                <div class="label label-default pull-right">
+                    id: {{$ctrl.computer.id}}
+                </div>
+                <h1>Edit Computer</h1>
+
+                <form >
+                    <!--<input type="hidden" value="{{$ctrl.computer.id}}" id="id"/> &lt;!&ndash; TODO: Change this value with the computer id &ndash;&gt;-->
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="name">Computer name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Computer name" ng-model="$ctrl.computer.name" >
+                        </div>
+                        <div class="form-group">
+                            <label for="introduced">Introduced date</label>
+                            <input type="date" class="form-control" id="introduced" placeholder="Introduced date" ng-model="$ctrl.computer.introduced" >
+                        </div>
+                        <div class="form-group">
+                            <label for="discontinued">Discontinued date</label>
+                            <input type="date" class="form-control" id="discontinued" placeholder="Discontinued date" ng-model="$ctrl.computer.discontinued" >
+                        </div>
+                        <div class="form-group">
+                            <label for="companyId">Company</label>
+                            <select class="form-control" id="companyId" ng-model="$ctrl.computer.company.id" >
+                                <option ng-repeat="company in $ctrl.companies" ng-value="{{company.id}}" ng-selected="$ctrl.computer.company.id === company.id">{{company.name}}</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                    <div class="actions pull-right">
+                        <input type="submit" value="Edit" class="btn btn-primary" ng-click="$ctrl.editComputer($ctrl.computer)">
+                        or
+                        <a href="dashboard" class="btn btn-default">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

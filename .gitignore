@@ -9,3 +9,4 @@ dist/
 # other
 .tmp
 .idea
+*.iml

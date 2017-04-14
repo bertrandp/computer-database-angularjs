@@ -1,0 +1,25 @@
+<footer class="navbar-fixed-bottom">
+    <div class="container text-center">
+        <ul class="pagination">
+            <li>
+                <a aria-label="Previous" ng-click="$ctrl.previousPage()" ng-hide="$ctrl.pager.page == 1">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li ng-repeat="n in $ctrl.pager.pageNumbers track by $index" ng-class="{'active': $ctrl.pager.page==n}">
+                <a ng-click="$ctrl.setPage(n)" >{{n}}</a>
+            </li>
+            <li>
+                <a aria-label="Next" ng-click="$ctrl.nextPage()" ng-hide="$ctrl.pager.page == $ctrl.pager.lastPage">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="btn-group btn-group-sm pull-right" role="group" >
+            <button type="button" class="btn btn-default" ng-click="$ctrl.setLimit(10)" ng-class="{'active': $ctrl.pager.limit==10}">10</button>
+            <button type="button" class="btn btn-default" ng-click="$ctrl.setLimit(50)" ng-class="{'active': $ctrl.pager.limit==50}">50</button>
+            <button type="button" class="btn btn-default" ng-click="$ctrl.setLimit(100)" ng-class="{'active': $ctrl.pager.limit==100}">100</button>
+        </div>
+    </div>
+</footer>
